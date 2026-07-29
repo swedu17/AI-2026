@@ -357,7 +357,7 @@
                 title: "생성형 AI 활용 원칙",
                 summary: "책임감 있고 윤리적인 AI 도구 사용을 위해 수립한 나만의 5가지 가이드라인",
                 date: "2026.03",
-                link: "../notebooklm/index.html",
+                link: "./notebooklm/index.html",
                 description: "AI 기술을 올바르고 안전하게 활용하기 위해 프롬프트 작성 시 준수해야 할 개인정보 보호, 출처 명시, 환각 현상 검증, 저작권 준수, 학문적 정직성에 관한 올바른 기준을 수립했습니다.",
                 keyLearnings: [
                     "AI 생성 결과물에 대한 출처 표기 의무화",
@@ -487,17 +487,12 @@
         let currentCategory = 'all';
 
         // Safe Card Click Handler
-        function handleCardClick(item) {
+        function handleCardClick(item, event) {
             if (item.link) {
-                try {
-                    // In blob preview iframe, direct relative navigation throws a SyntaxError on window.location.href.
-                    if (window.location.protocol === 'blob:') {
-                        openModal(item.id);
-                    } else {
-                        window.location.href = item.link;
-                    }
-                } catch (err) {
-                    console.warn("Direct location navigation restricted, opening modal instead:", err);
+                // If clicked button specifically or if direct location change is safe
+                if (window.location.protocol !== 'blob:') {
+                    window.location.href = item.link;
+                } else {
                     openModal(item.id);
                 }
             } else {
@@ -534,7 +529,7 @@
             filtered.forEach(item => {
                 const cardEl = document.createElement('div');
                 cardEl.className = "glass-card rounded-3xl p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 cursor-pointer group relative border border-slate-200/80 dark:border-slate-800/80";
-                cardEl.onclick = () => handleCardClick(item);
+                cardEl.onclick = (e) => handleCardClick(item, e);
 
                 cardEl.innerHTML = `
                     <div>
