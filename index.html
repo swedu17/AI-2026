@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>인공지능일반 학습 포트폴리오</title>
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -24,9 +23,7 @@
             }
         }
     </script>
-    <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts (Noto Sans KR) -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <style>
         body {
@@ -93,7 +90,6 @@
 </head>
 <body class="min-h-screen flex flex-col justify-between selection:bg-indigo-500 selection:text-white bg-slate-900 text-slate-100 dark:bg-slate-900 dark:text-slate-100 light:bg-slate-50 light:text-slate-800">
 
-    <!-- Header / Navbar -->
     <header class="sticky top-0 z-40 w-full border-b border-slate-800/80 dark:border-slate-800/80 dark:bg-slate-900/85 light:border-slate-200 light:bg-white/85 backdrop-blur-md transition-colors">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
             <a href="#" class="flex items-center space-x-3 group">
@@ -110,19 +106,16 @@
                     <a href="#reflection" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition">인사이트 & 성찰</a>
                 </nav>
 
-                <!-- Dark / Light Mode Toggle Button -->
                 <button id="theme-toggle" onclick="toggleTheme()" class="w-10 h-10 rounded-xl bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-amber-400 hover:bg-slate-300 dark:hover:bg-slate-700 flex items-center justify-center transition-all shadow-sm">
                     <i id="theme-icon" class="fa-solid fa-moon text-lg"></i>
                 </button>
 
-                <!-- Mobile Menu Button -->
                 <button onclick="toggleMobileMenu()" class="md:hidden w-10 h-10 rounded-xl bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 flex items-center justify-center">
                     <i class="fa-solid fa-bars text-lg"></i>
                 </button>
             </div>
         </div>
 
-        <!-- Mobile Navigation Menu Dropdown -->
         <div id="mobile-menu" class="hidden md:hidden border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-4 py-3 space-y-2">
             <a href="#about" onclick="toggleMobileMenu()" class="block py-2 text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-indigo-600">탐구 개요</a>
             <a href="#portfolio" onclick="toggleMobileMenu()" class="block py-2 text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-indigo-600">프로젝트 컬렉션</a>
@@ -130,9 +123,7 @@
         </div>
     </header>
 
-    <!-- Main Content Area -->
     <main class="flex-grow">
-        <!-- Hero Section -->
         <section id="about" class="py-12 md:py-20 relative overflow-hidden">
             <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-indigo-500/10 dark:bg-indigo-600/15 rounded-full blur-3xl -z-10"></div>
             
@@ -142,7 +133,6 @@
                     <i class="fa-solid fa-sparkles"></i> 2026 AI GENERAL STUDIES PORTFOLIO
                 </div>
 
-                <!-- Main Title -->
                 <h1 class="text-2xl sm:text-4xl md:text-5xl font-extrabold tracking-tight mb-6 text-slate-900 dark:text-white leading-tight">
                     지능형 기술로 세상을 읽고, <br class="hidden sm:inline">
                     <span class="gradient-text">데이터로 미래를 설계하다</span>
@@ -151,7 +141,6 @@
                     '인공지능일반' 교과를 통해 확립한 윤리적 가치관부터 생성형 AI 멀티모달 기획, 공공 데이터 기반 실증 분석, 사회적 문제를 해결하는 웹 서비스 프로토타이핑까지의 실전 탐구 성과를 종합 수록했습니다.
                 </p>
 
-                <!-- Achievement Stats Bar -->
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
                     <div class="p-5 rounded-3xl glass-card text-center hover:scale-105 transition-transform border border-indigo-500/10">
                         <div class="text-2xl sm:text-3xl font-black text-indigo-600 dark:text-indigo-400 mb-1">08</div>
@@ -173,7 +162,6 @@
             </div>
         </section>
 
-        <!-- Portfolio Cards Section -->
         <section id="portfolio" class="py-16 md:py-24 bg-slate-100/70 dark:bg-slate-900/40 relative transition-colors border-y border-slate-200/60 dark:border-slate-800/60">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
@@ -183,7 +171,6 @@
                         <p class="text-slate-600 dark:text-slate-400 text-sm md:text-base">개별 카드를 클릭하여 문제 정의부터 모델 및 기술 스택, 시사점까지 상세 내용을 확인해보세요.</p>
                     </div>
 
-                    <!-- Search & Filter Controls -->
                     <div class="flex flex-col sm:flex-row gap-3">
                         <div class="relative">
                             <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-xs text-slate-400"></i>
@@ -199,14 +186,11 @@
                     </div>
                 </div>
 
-                <!-- Card Grid Container -->
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" id="card-grid">
-                    <!-- Cards will be dynamically inserted here -->
-                </div>
+                    </div>
             </div>
         </section>
 
-        <!-- Final Reflection Interactive Section -->
         <section id="reflection" class="py-16 md:py-24 relative overflow-hidden">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center max-w-3xl mx-auto mb-16">
@@ -217,7 +201,6 @@
                     </p>
                 </div>
 
-                <!-- Core Takeaways Grid -->
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
                     <div class="glass-card p-8 rounded-3xl relative overflow-hidden border border-indigo-500/20">
                         <div class="w-12 h-12 rounded-2xl bg-indigo-500/10 text-indigo-500 flex items-center justify-center text-2xl mb-6">
@@ -250,7 +233,6 @@
                     </div>
                 </div>
 
-                <!-- Gemini AI Tutor Q&A Interactive Widget -->
                 <div class="glass-card p-8 rounded-3xl border border-indigo-500/30 max-w-4xl mx-auto shadow-xl">
                     <div class="flex items-center gap-4 mb-6">
                         <div class="w-12 h-12 rounded-2xl gradient-bg flex items-center justify-center text-white text-xl shadow-lg shadow-indigo-500/30">
@@ -280,24 +262,20 @@
         </section>
     </main>
 
-    <!-- Modal Popup for Card Details -->
     <div id="card-modal" class="fixed inset-0 bg-black/60 dark:bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
         <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl relative animate-fade-in" id="modal-content-wrapper">
             <button onclick="closeModal()" class="absolute top-5 right-5 w-9 h-9 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 rounded-full flex items-center justify-center transition z-10">
                 <i class="fa-solid fa-xmark"></i>
             </button>
             <div id="modal-inner" class="p-6 md:p-8">
-                <!-- Modal Dynamic Content -->
-            </div>
+                </div>
         </div>
     </div>
 
-    <!-- Scroll To Top Floating Button -->
     <button id="scroll-top-btn" onclick="scrollToTop()" class="fixed bottom-6 right-6 w-11 h-11 rounded-full gradient-bg text-white shadow-xl flex items-center justify-center opacity-0 pointer-events-none transition-all duration-300 z-30 hover:scale-110">
         <i class="fa-solid fa-arrow-up text-sm"></i>
     </button>
 
-    <!-- Footer -->
     <footer class="border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 py-8 text-slate-500 text-sm transition-colors">
         <div class="max-w-7xl mx-auto px-4 text-center">
             <p class="font-medium">© 2026 AI General Studies Portfolio. All rights reserved.</p>
@@ -305,7 +283,6 @@
         </div>
     </footer>
 
-    <!-- JavaScript logic -->
     <script>
         // Mobile Menu Toggle
         function toggleMobileMenu() {
@@ -393,6 +370,7 @@
                 title: "진로 데이터 분석",
                 summary: "IT 및 AI 분야 직무 동향과 요구 역량을 공공 데이터 기반으로 분석",
                 date: "2026.05",
+                link: "./pnu/index.html",
                 description: "워크넷 및 공공 데이터 포털의 채용 데이터를 기반으로 향후 5년간 급부상할 AI 관련 직무 역량 키워드를 워드클라우드 및 시각화 차트로 도출했습니다.",
                 keyLearnings: [
                     "Python (Pandas, Matplotlib) 데이터 전처리 기초",
