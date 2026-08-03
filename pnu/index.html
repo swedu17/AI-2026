@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>부산대학교 공과대학 전공 탐색 웹 보고서</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        pnu: {
+                            blue: '#002D56',
+                            light: '#0054A6',
+                            accent: '#00A3E0',
+                            gold: '#D4AF37',
+                            bg: '#F8FAFC'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+        body {
+            font-family: 'Pretendard', sans-serif;
+            background-color: #F8FAFC;
+        }
+        .gradient-hero {
+            background: linear-gradient(135deg, #001E3C 0%, #002D56 50%, #0054A6 100%);
+        }
+        .card-shadow {
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+        }
+    </style>
+</head>
+<body class="text-slate-800 antialiased selection:bg-pnu-accent selection:text-white">
+
+    <!-- Header Navigation -->
+    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <!-- Left: Logo & Home Button -->
+                <div class="flex items-center space-x-3">
+                    <a href="../index.html" class="flex items-center justify-center w-10 h-10 rounded-xl bg-slate-100 hover:bg-pnu-blue hover:text-white text-slate-600 transition-all shadow-sm" title="메인 홈으로 이동">
+                        <i class="fa-solid fa-house text-lg"></i>
+                    </a>
+                    <div class="w-10 h-10 rounded-xl bg-pnu-blue text-white flex items-center justify-center font-bold text-xl shadow-md">
+                        PNU
+                    </div>
+                    <div>
+                        <span class="font-bold text-lg text-pnu-blue tracking-tight block">부산대학교 공과대학</span>
+                        <span class="text-xs text-slate-500 font-medium">미래를 설계하는 공학도 전공 탐색 안내서</span>
+                    </div>
+                </div>
+
+                <!-- Right: Navigation Menu Links -->
+                <div class="hidden md:flex items-center space-x-5 text-sm font-semibold text-slate-600">
+                    <a href="../index.html" class="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-slate-100 hover:bg-pnu-blue hover:text-white text-slate-700 transition-colors">
+                        <i class="fa-solid fa-house text-xs"></i>
+                        <span>홈으로</span>
+                    </a>
+                    <a href="#welcome" class="hover:text-pnu-light transition-colors">안내서 소개</a>
+                    <a href="#indicators" class="hover:text-pnu-light transition-colors">3대 지표</a>
+                    <a href="#employment" class="hover:text-pnu-light transition-colors">취업률 분석</a>
+                    <a href="#competition" class="hover:text-pnu-light transition-colors">경쟁률 리포트</a>
+                    <a href="#scholarship" class="hover:text-pnu-light transition-colors">장학 혜택</a>
+                    <a href="#checklist" class="hover:text-pnu-light transition-colors">맞춤 전공 진단</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="welcome" class="gradient-hero text-white py-16 sm:py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+        <div class="absolute -right-20 -top-20 w-96 h-96 bg-pnu-accent/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-md text-pnu-accent text-xs font-semibold mb-6 border border-white/10">
+                <i class="fa-solid fa-compass"></i>
+                <span>예비 부산대 공학도를 위한 전공 가이드</span>
+            </div>
+            <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight mb-6">
+                미래를 설계하는 공학도<br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-300 via-cyan-200 to-amber-200">
+                    부산대학교 공과대학 전공 탐색 보고서
+                </span>
+            </h1>
+            <p class="text-slate-300 text-base sm:text-lg max-w-3xl leading-relaxed mb-8">
+                학과 선택은 단순한 4년의 학업 과정을 넘어, 여러분의 무한한 잠재력을 발견하고 첨단 기술로 사회에 가치를 더하는 <strong class="text-white underline decoration-pnu-accent font-semibold">미래 설계의 첫 단추</strong>입니다. 거점 국립 부산대학교의 탄탄한 커리큘럼과 특성화 클러스터를 확인해 보세요.
+            </p>
+            
+            <!-- Campus Badges -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-4xl pt-4">
+                <div class="bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/10 hover:bg-white/15 transition-all">
+                    <div class="flex items-center space-x-3 mb-1">
+                        <i class="fa-solid fa-city text-sky-400 text-lg"></i>
+                        <span class="font-bold text-white">부산 캠퍼스</span>
+                    </div>
+                    <p class="text-xs text-slate-300">거점 국립대 핵심역량 (기계, 건설, 재료, 전기전자 등 공학 전 분야)</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/10 hover:bg-white/15 transition-all">
+                    <div class="flex items-center space-x-3 mb-1">
+                        <i class="fa-solid fa-dna text-emerald-400 text-lg"></i>
+                        <span class="font-bold text-white">양산 캠퍼스</span>
+                    </div>
+                    <p class="text-xs text-slate-300">의생명 · 정보전략 특성화 (의생명공학, 데이터사이언스)</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/10 hover:bg-white/15 transition-all">
+                    <div class="flex items-center space-x-3 mb-1">
+                        <i class="fa-solid fa-microchip text-amber-400 text-lg"></i>
+                        <span class="font-bold text-white">밀양 캠퍼스</span>
+                    </div>
+                    <p class="text-xs text-slate-300">나노 · 바이오 산업기술 특성화 (바이오산업기계공학 등)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Statistics Overview -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 relative z-20">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+            <div class="bg-white rounded-2xl p-6 border border-slate-100 card-shadow">
+                <div class="flex items-center justify-between mb-2">
+                    <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">특성화/계약학과</span>
+                    <i class="fa-solid fa-award text-emerald-500 text-xl"></i>
+                </div>
+                <div class="text-3xl font-black text-slate-800">100.0%</div>
+                <p class="text-xs text-slate-500 mt-1">의생명 / 데이터사이언스 / 계약학과 취업률</p>
+            </div>
+            <div class="bg-white rounded-2xl p-6 border border-slate-100 card-shadow">
+                <div class="flex items-center justify-between mb-2">
+                    <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">최고 신입생 경쟁률</span>
+                    <i class="fa-solid fa-fire text-rose-500 text-xl"></i>
+                </div>
+                <div class="text-3xl font-black text-slate-800">13.8 : 1</div>
+                <p class="text-xs text-slate-500 mt-1">건축학과(5년제) 공과대학 내 최고 기록</p>
+            </div>
+            <div class="bg-white rounded-2xl p-6 border border-slate-100 card-shadow">
+                <div class="flex items-center justify-between mb-2">
+                    <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">공대 평균 연간 등록금</span>
+                    <i class="fa-solid fa-coins text-amber-500 text-xl"></i>
+                </div>
+                <div class="text-3xl font-black text-slate-800">4,728,000원</div>
+                <p class="text-xs text-slate-500 mt-1">사립대 대비 압도적 가성비의 국립대 혜택</p>
+            </div>
+            <div class="bg-white rounded-2xl p-6 border border-slate-100 card-shadow bg-gradient-to-br from-pnu-blue to-pnu-light text-white">
+                <div class="flex items-center justify-between mb-2">
+                    <span class="text-xs font-bold text-sky-200 uppercase tracking-wider">반도체공학 1인당 장학금</span>
+                    <i class="fa-solid fa-bolt text-amber-300 text-xl"></i>
+                </div>
+                <div class="text-3xl font-black text-amber-300">7,100,908원</div>
+                <p class="text-xs text-sky-100 mt-1">등록금 대비 +237만 원 (전액+생활비 지원)</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3 Core Indicators -->
+    <section id="indicators" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+            <h2 class="text-2xl sm:text-3xl font-bold text-pnu-blue mb-3">현명한 전공 선택을 위한 3대 핵심 지표</h2>
+            <p class="text-slate-600 text-sm sm:text-base">
+                자신의 흥미와 더불어 사회적 수요와 학업 환경을 객관적으로 분석할 수 있는 핵심 기준입니다.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white rounded-2xl p-8 border border-slate-100 card-shadow hover:-translate-y-1 transition-transform">
+                <div class="w-14 h-14 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-2xl font-bold mb-6">
+                    <i class="fa-solid fa-chart-line"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">01. 취업률 (Employment Rate)</h3>
+                <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                    실무 중심 교육의 성과를 직접적으로 보여주는 척도입니다. 부산대학교 공학 계열은 대학원 진학 시 전문성이 비약적으로 강화되어 **80~100%**에 달하는 독보적 취업률을 달성합니다.
+                </p>
+                <span class="inline-flex items-center text-xs font-semibold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-full">
+                    <i class="fa-solid fa-check mr-1.5"></i> 대학원 석사 과정 연계 강화
+                </span>
+            </div>
+
+            <div class="bg-white rounded-2xl p-8 border border-slate-100 card-shadow hover:-translate-y-1 transition-transform">
+                <div class="w-14 h-14 rounded-2xl bg-rose-50 text-rose-600 flex items-center justify-center text-2xl font-bold mb-6">
+                    <i class="fa-solid fa-users"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">02. 경쟁률 (Competition Rate)</h3>
+                <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                    학과에 대한 대중적 선호도와 사회적 수요를 투영합니다. 높은 경쟁률은 우수한 동료들과 함께 토론하고 성장하며 견고한 네트워크를 형성할 수 있는 최적의 환경을 의미합니다.
+                </p>
+                <span class="inline-flex items-center text-xs font-semibold text-rose-600 bg-rose-50 px-2.5 py-1 rounded-full">
+                    <i class="fa-solid fa-check mr-1.5"></i> 사회적 인지도 및 인재 밀도
+                </span>
+            </div>
+
+            <div class="bg-white rounded-2xl p-8 border border-slate-100 card-shadow hover:-translate-y-1 transition-transform">
+                <div class="w-14 h-14 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center text-2xl font-bold mb-6">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">03. 장학 및 지원 (Financial Support)</h3>
+                <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                    거점 국립대 특유의 합리적인 교육비 구조와 함께, 국가 전략 산업 연계형 파격 장학 혜택을 통해 경제적 부담 없이 학업과 연구에 몰두할 수 있는 환경을 조성합니다.
+                </p>
+                <span class="inline-flex items-center text-xs font-semibold text-amber-600 bg-amber-50 px-2.5 py-1 rounded-full">
+                    <i class="fa-solid fa-check mr-1.5"></i> 등록금 상회 파격 장학금
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Employment Analysis & Chart -->
+    <section id="employment" class="bg-slate-900 text-white py-16 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col lg:flex-row gap-12 items-center">
+                <div class="w-full lg:w-1/2">
+                    <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-semibold mb-4 border border-emerald-500/30">
+                        <i class="fa-solid fa-square-poll-vertical"></i>
+                        <span>2025년 기준 통계 분석</span>
+                    </div>
+                    <h2 class="text-2xl sm:text-4xl font-extrabold mb-6">
+                        취업률로 보는 공학의 힘:<br>
+                        <span class="text-emerald-400">취업 강세 학과 현황</span>
+                    </h2>
+                    <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-6">
+                        첨단 신산업과 전통 제조 산업 전반에서 압도적 성과를 입증하고 있습니다. 산학협력이 활발한 특성화 학과와 채용 보장형 계약학과들이 취업 시장에서 우위를 점하고 있습니다.
+                    </p>
+
+                    <!-- Key Insights Cards -->
+                    <div class="space-y-4">
+                        <div class="bg-slate-800/80 rounded-xl p-4 border border-slate-700">
+                            <div class="font-bold text-white text-base mb-1 flex items-center">
+                                <i class="fa-solid fa-handshake text-emerald-400 mr-2"></i> 계약학과의 강력한 위력
+                            </div>
+                            <p class="text-xs text-slate-300">
+                                채용 연계형 대학원 과정(기계부품시스템, ICT융합, 스마트가전공조시스템 등) 및 특성화 전공이 취업률 **100%** 달성.
+                            </p>
+                        </div>
+                        <div class="bg-slate-800/80 rounded-xl p-4 border border-slate-700">
+                            <div class="font-bold text-white text-base mb-1 flex items-center">
+                                <i class="fa-solid fa-user-graduate text-cyan-400 mr-2"></i> 대학원 진학의 높은 가치
+                            </div>
+                            <p class="text-xs text-slate-300">
+                                대학원 과정 진학 시 도시공학과 **83.3%**, 건축공학과 **100%**, 원자력공학/의공학 **100%** 취업률 기록.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chart Box -->
+                <div class="w-full lg:w-1/2 bg-slate-800 rounded-2xl p-6 border border-slate-700 shadow-2xl">
+                    <h3 class="text-lg font-bold text-white mb-4 flex items-center justify-between">
+                        <span>주요 학과 취업률 (%)</span>
+                        <span class="text-xs text-slate-400 font-normal">2025년 기준 데이터</span>
+                    </h3>
+                    <div class="relative h-80 w-full">
+                        <canvas id="employmentChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Competition Rate & Popular Majors -->
+    <section id="competition" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+            <h2 class="text-2xl sm:text-3xl font-bold text-pnu-blue mb-3">경쟁률로 보는 뜨거운 관심: 인기 학과 리포트</h2>
+            <p class="text-slate-600 text-sm sm:text-base">
+                대한민국 산업 핵심 분야를 이끄는 부산대학교 공과대학의 치열한 신입생 경쟁률 현황입니다.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <!-- Competition Chart -->
+            <div class="lg:col-span-7 bg-white rounded-2xl p-6 border border-slate-100 card-shadow">
+                <h3 class="text-lg font-bold text-slate-800 mb-4 flex items-center justify-between">
+                    <span>주요 학과 신입생 경쟁률 ( : 1 )</span>
+                    <span class="text-xs text-rose-500 font-semibold"><i class="fa-solid fa-fire mr-1"></i>인기 상승 전공</span>
+                </h3>
+                <div class="relative h-80 w-full">
+                    <canvas id="competitionChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Competition Details List -->
+            <div class="lg:col-span-5 space-y-3">
+                <div class="bg-white rounded-xl p-4 border border-slate-200 card-shadow flex items-center justify-between hover:border-pnu-accent transition-colors">
+                    <div>
+                        <div class="font-bold text-slate-800 text-base">건축학과 (5년제)</div>
+                        <div class="text-xs text-slate-500">공과대학 내 최고 경쟁률 기록</div>
+                    </div>
+                    <div class="text-2xl font-black text-rose-600">13.8 : 1</div>
+                </div>
+
+                <div class="bg-white rounded-xl p-4 border border-slate-200 card-shadow flex items-center justify-between hover:border-pnu-accent transition-colors">
+                    <div>
+                        <div class="font-bold text-slate-800 text-base">화공생명공학과</div>
+                        <div class="text-xs text-slate-500">전통적인 인기와 저력 입증</div>
+                    </div>
+                    <div class="text-2xl font-black text-rose-600">13.4 : 1</div>
+                </div>
+
+                <div class="bg-white rounded-xl p-4 border border-slate-200 card-shadow flex items-center justify-between hover:border-pnu-accent transition-colors">
+                    <div>
+                        <div class="font-bold text-slate-800 text-base">기계공학부</div>
+                        <div class="text-xs text-slate-500">대한민국 기계 산업의 중심 학과</div>
+                    </div>
+                    <div class="text-2xl font-black text-rose-600">9.5 : 1</div>
+                </div>
+
+                <div class="bg-white rounded-xl p-4 border border-slate-200 card-shadow flex items-center justify-between hover:border-pnu-accent transition-colors">
+                    <div>
+                        <div class="font-bold text-slate-800 text-base">도시공학과</div>
+                        <div class="text-xs text-slate-500">미래 스마트 도시 설계 인 인기</div>
+                    </div>
+                    <div class="text-2xl font-black text-rose-600">8.9 : 1</div>
+                </div>
+
+                <div class="bg-white rounded-xl p-4 border border-slate-200 card-shadow flex items-center justify-between hover:border-pnu-accent transition-colors">
+                    <div>
+                        <div class="font-bold text-slate-800 text-base">반도체공학전공</div>
+                        <div class="text-xs text-slate-500">국가 핵심 첨단 전략 산업 집중 관심</div>
+                    </div>
+                    <div class="text-2xl font-black text-rose-600">8.7 : 1</div>
+                </div>
+
+                <div class="bg-white rounded-xl p-4 border border-slate-200 card-shadow flex items-center justify-between hover:border-pnu-accent transition-colors">
+                    <div>
+                        <div class="font-bold text-slate-800 text-base">건축공학과</div>
+                        <div class="text-xs text-slate-500">안정적인 사회적 수요 기반</div>
+                    </div>
+                    <div class="text-2xl font-black text-rose-600">8.3 : 1</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scholarship & Financial Support Highlight -->
+    <section id="scholarship" class="bg-slate-50 py-16 border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-xs font-bold text-pnu-light uppercase tracking-wider">Financial Benefit</span>
+                <h2 class="text-2xl sm:text-3xl font-bold text-pnu-blue mt-1 mb-3">든든한 학업의 동반자: 장학금 및 등록금</h2>
+                <p class="text-slate-600 text-sm sm:text-base">
+                    국립대학교 특유의 가성비 높은 등록금과 국가 전략 산업 인재 지원 파격 혜택
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- Tuition Card -->
+                <div class="bg-white rounded-2xl p-8 border border-slate-200 card-shadow">
+                    <div class="flex items-center space-x-4 mb-6">
+                        <div class="w-12 h-12 rounded-xl bg-blue-50 text-pnu-blue flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-piggy-bank"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-slate-800">합리적인 등록금 구조</h3>
+                            <p class="text-xs text-slate-500">사립대학교 대비 부담 없는 교육비</p>
+                        </div>
+                    </div>
+                    <div class="text-3xl sm:text-4xl font-extrabold text-pnu-blue mb-2">
+                        약 4,728,000원 <span class="text-sm font-normal text-slate-500">/ 연간</span>
+                    </div>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        공과대학 학부 평균 연간 등록금으로, 우수한 학업 환경과 연구 시설을 합리적인 비용으로 제공받을 수 있는 거점 국립대학만의 특권입니다.
+                    </p>
+                </div>
+
+                <!-- Scholarship Card -->
+                <div class="bg-gradient-to-br from-pnu-blue to-pnu-light text-white rounded-2xl p-8 card-shadow relative overflow-hidden">
+                    <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-white/10 rounded-full blur-2xl"></div>
+                    <div class="flex items-center space-x-4 mb-6">
+                        <div class="w-12 h-12 rounded-xl bg-amber-400/20 text-amber-300 flex items-center justify-center text-xl border border-amber-400/30">
+                            <i class="fa-solid fa-gift"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-white">등록금을 뛰어넘는 장학 혜택</h3>
+                            <p class="text-xs text-sky-200">전기전자공학부 반도체공학전공 기준</p>
+                        </div>
+                    </div>
+                    <div class="text-3xl sm:text-4xl font-extrabold text-amber-300 mb-2">
+                        7,100,908원 <span class="text-sm font-normal text-sky-100">/ 1인당 평균</span>
+                    </div>
+                    <p class="text-sky-100 text-sm leading-relaxed">
+                        연간 등록금을 **230만 원 이상 상회**하는 금액으로, 사실상 <strong class="text-amber-300 underline font-semibold">'전액 장학금 + 생활비 지원'</strong> 모델이 작동하고 있어 학업에 전념할 수 있습니다.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Self-Assessment Checklist -->
+    <section id="checklist" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="max-w-3xl mx-auto bg-white rounded-3xl p-6 sm:p-10 border border-slate-200 card-shadow">
+            <div class="text-center mb-8">
+                <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-pnu-blue/10 text-pnu-blue text-xs font-semibold mb-3">
+                    <i class="fa-solid fa-clipboard-check"></i>
+                    <span>Self Assessment</span>
+                </div>
+                <h2 class="text-2xl sm:text-3xl font-bold text-pnu-blue">나에게 맞는 전공 찾기 체크리스트</h2>
+                <p class="text-slate-600 text-sm mt-2">나의 흥미와 비전에 부합하는 항목을 체크하고 추천 특성화 캠퍼스를 확인해보세요!</p>
+            </div>
+
+            <form id="assessmentForm" class="space-y-4">
+                <label class="flex items-start p-4 rounded-xl border border-slate-200 hover:bg-slate-50 cursor-pointer transition-colors">
+                    <input type="checkbox" name="q1" value="yangsan" class="mt-1 w-5 h-5 text-pnu-blue rounded border-slate-300 focus:ring-pnu-accent">
+                    <div class="ml-3">
+                        <span class="font-semibold text-slate-800 text-sm sm:text-base block">양산 캠퍼스 관심도</span>
+                        <span class="text-xs text-slate-500">첨단 의생명 기술이나 데이터 분석으로 인류의 건강한 삶과 바이오 신산업에 기여하고 싶다.</span>
+                    </div>
+                </label>
+
+                <label class="flex items-start p-4 rounded-xl border border-slate-200 hover:bg-slate-50 cursor-pointer transition-colors">
+                    <input type="checkbox" name="q2" value="busan" class="mt-1 w-5 h-5 text-pnu-blue rounded border-slate-300 focus:ring-pnu-accent">
+                    <div class="ml-3">
+                        <span class="font-semibold text-slate-800 text-sm sm:text-base block">부산 캠퍼스 (전통/거점)</span>
+                        <span class="text-xs text-slate-500">전통적인 기계, 조선, 항공우주, 재료, 건축과 같은 국가 거대 시스템 설계 및 엔지니어링에 흥미가 있다.</span>
+                    </div>
+                </label>
+
+                <label class="flex items-start p-4 rounded-xl border border-slate-200 hover:bg-slate-50 cursor-pointer transition-colors">
+                    <input type="checkbox" name="q3" value="semicon" class="mt-1 w-5 h-5 text-pnu-blue rounded border-slate-300 focus:ring-pnu-accent">
+                    <div class="ml-3">
+                        <span class="font-semibold text-slate-800 text-sm sm:text-base block">국가 전략 산업 & 파격 장학</span>
+                        <span class="text-xs text-slate-500">반도체 등 국가 집중 육성 전략 산업의 주역으로서 등록금 이상의 장학 혜택을 받으며 연구에 몰두하고 싶다.</span>
+                    </div>
+                </label>
+
+                <label class="flex items-start p-4 rounded-xl border border-slate-200 hover:bg-slate-50 cursor-pointer transition-colors">
+                    <input type="checkbox" name="q4" value="milyang" class="mt-1 w-5 h-5 text-pnu-blue rounded border-slate-300 focus:ring-pnu-accent">
+                    <div class="ml-3">
+                        <span class="font-semibold text-slate-800 text-sm sm:text-base block">밀양 캠퍼스 (나노/바이오)</span>
+                        <span class="text-xs text-slate-500">나노 및 바이오 신소재, 스마트 농업 기계 기술을 통해 환경과 기술이 공존하는 미래를 만들고 싶다.</span>
+                    </div>
+                </label>
+
+                <button type="button" onclick="analyzeResult()" class="w-full mt-6 py-4 bg-pnu-blue hover:bg-pnu-light text-white font-bold rounded-xl shadow-lg transition-colors flex items-center justify-center space-x-2">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    <span>나의 진로 적성 분석 결과 보기</span>
+                </button>
+            </form>
+
+            <!-- Diagnostic Result Box -->
+            <div id="resultBox" class="hidden mt-6 p-6 rounded-2xl bg-sky-50 border border-sky-200">
+                <h4 class="font-bold text-pnu-blue text-lg mb-2 flex items-center">
+                    <i class="fa-solid fa-circle-check text-emerald-500 mr-2"></i> 맞춤 진로 가이드
+                </h4>
+                <div id="resultText" class="text-sm text-slate-700 leading-relaxed space-y-2"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800 text-xs sm:text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+            <div class="flex justify-center space-x-3 items-center">
+                <a href="../index.html" class="hover:text-white transition-colors flex items-center space-x-1">
+                    <i class="fa-solid fa-house"></i>
+                    <span>홈으로</span>
+                </a>
+                <span class="text-slate-600">|</span>
+                <span class="font-bold text-white text-base">부산대학교 공과대학</span>
+                <span class="text-slate-600">|</span>
+                <span>진로 진학 상담 및 커리큘럼 안내</span>
+            </div>
+            <p class="text-slate-500 max-w-2xl mx-auto leading-relaxed">
+                성공적인 공학도의 길은 단순한 수치 비교가 아닌, 개인의 '적성'과 학과의 '미래 가치'를 결합하는 것에서 시작됩니다. 부산대학교 공과대학에서 여러분의 꿈을 펼쳐보세요.
+            </p>
+            <p class="text-slate-600">© Pusan National University College of Engineering. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Charts & Logic -->
+    <script>
+        // Chart 1: Employment Rate Chart
+        const empCtx = document.getElementById('employmentChart').getContext('2d');
+        new Chart(empCtx, {
+            type: 'bar',
+            data: {
+                labels: ['의생명공학', '데이터사이언스', '기계공학부', '바이오산업기계', '조선해양공학', '항공우주공학', '재료공학부'],
+                datasets: [{
+                    label: '취업률 (%)',
+                    data: [100.0, 100.0, 78.4, 76.5, 76.0, 74.1, 70.8],
+                    backgroundColor: [
+                        '#10B981', '#10B981', '#3B82F6', '#F59E0B', '#3B82F6', '#3B82F6', '#3B82F6'
+                    ],
+                    borderRadius: 8,
+                    borderSkipped: false,
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return ` 취업률: ${context.raw}%`;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100,
+                        ticks: { color: '#94A3B8' },
+                        grid: { color: '#334155' }
+                    },
+                    x: {
+                        ticks: { color: '#CBD5E1', font: { size: 11 } },
+                        grid: { display: false }
+                    }
+                }
+            }
+        });
+
+        // Chart 2: Competition Rate Chart
+        const compCtx = document.getElementById('competitionChart').getContext('2d');
+        new Chart(compCtx, {
+            type: 'bar',
+            data: {
+                labels: ['건축학과(5년)', '화공생명공학', '기계공학부', '도시공학과', '반도체공학', '건축공학과'],
+                datasets: [{
+                    label: '경쟁률 (:1)',
+                    data: [13.8, 13.4, 9.5, 8.9, 8.7, 8.3],
+                    backgroundColor: '#F43F5E',
+                    borderRadius: 8,
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                indexAxis: 'y',
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return ` 경쟁률: ${context.raw} : 1`;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        max: 16,
+                        ticks: { color: '#64748B' },
+                        grid: { color: '#F1F5F9' }
+                    },
+                    y: {
+                        ticks: { color: '#334155', font: { weight: 'bold' } },
+                        grid: { display: false }
+                    }
+                }
+            }
+        });
+
+        // Checklist Result Analysis Logic
+        function analyzeResult() {
+            const form = document.getElementById('assessmentForm');
+            const checkboxes = form.querySelectorAll('input[type="checkbox"]:checked');
+            const resultBox = document.getElementById('resultBox');
+            const resultText = document.getElementById('resultText');
+
+            if (checkboxes.length === 0) {
+                resultBox.classList.remove('hidden');
+                resultText.innerHTML = '<p class="text-amber-700 font-medium">최소 하나 이상의 관심 항목을 선택해 주세요!</p>';
+                return;
+            }
+
+            let recommendations = [];
+            checkboxes.forEach(cb => {
+                if (cb.value === 'yangsan') {
+                    recommendations.push('<strong>[양산 캠퍼스 추천]</strong> 의생명공학, 데이터사이언스전공 등 첨단 ICT 및 바이오 융합 분야에 최적화되어 있습니다. (취업률 100% 특성화)');
+                }
+                if (cb.value === 'busan') {
+                    recommendations.push('<strong>[부산 캠퍼스 추천]</strong> 기계공학부, 화공생명공학, 재료공학부, 조선해양공학, 항공우주공학, 건축/도시공학 등 대한민국 산업의 단단한 뿌리가 되는 거점 국립대 전통 강자 전공들을 추천합니다.');
+                }
+                if (cb.value === 'semicon') {
+                    recommendations.push('<strong>[전기전자공학부 반도체공학전공 추천]</strong> 1인당 평균 710만 원의 파격 장학금 지원으로 사실상 등록금 전액 지원 및 생활비 혜택을 누리며 국가 전략 산업 리더로 성장할 수 있습니다.');
+                }
+                if (cb.value === 'milyang') {
+                    recommendations.push('<strong>[밀양 캠퍼스 추천]</strong> 바이오산업기계공학과, 나노 및 바이오 신소재 등 환경과 농업, 공학 기술이 공존하는 친환경 첨단 특성화 분야를 추천합니다.');
+                }
+            });
+
+            resultBox.classList.remove('hidden');
+            resultText.innerHTML = recommendations.map(item => `<p class="border-b border-sky-100 pb-2 last:border-0">${item}</p>`).join('');
+        }
+    </script>
+</body>
+</html>
