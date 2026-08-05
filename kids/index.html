@@ -64,11 +64,13 @@
     <header class="fixed top-0 left-0 right-0 z-50 glass-card border-b border-slate-800/80">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
             <div class="flex items-center space-x-3">
-                <div class="p-2 bg-brand-600 rounded-lg text-white">
-                    <i data-lucide="shield-check" class="w-6 h-6"></i>
-                </div>
-                <span class="font-bold text-xl tracking-tight text-white">SafeZone <span
-                        class="text-brand-500">Optimizer</span></span>
+                <a href="../index.html" class="flex items-center space-x-3 hover:opacity-90 transition-opacity">
+                    <div class="p-2 bg-brand-600 rounded-lg text-white">
+                        <i data-lucide="shield-check" class="w-6 h-6"></i>
+                    </div>
+                    <span class="font-bold text-xl tracking-tight text-white">SafeZone <span
+                            class="text-brand-500">Optimizer</span></span>
+                </a>
                 <span
                     class="text-xs bg-brand-900/60 text-brand-300 border border-brand-500/30 px-2 py-0.5 rounded-full">v1.0.0
                     PRD</span>
@@ -86,6 +88,11 @@
                     class="px-3.5 py-2 text-sm font-medium text-slate-300 hover:text-white bg-slate-800/80 hover:bg-slate-700/80 border border-slate-700 rounded-lg transition-all flex items-center space-x-1.5">
                     <i data-lucide="home" class="w-4 h-4"></i>
                     <span>홈</span>
+                </a>
+                <a href="./kids/index.html"
+                    class="px-3.5 py-2 text-sm font-medium text-slate-300 hover:text-white bg-slate-800/80 hover:bg-slate-700/80 border border-slate-700 rounded-lg transition-all flex items-center space-x-1.5">
+                    <i data-lucide="bar-chart-2" class="w-4 h-4 text-brand-400"></i>
+                    <span>지역 문제 데이터 분석</span>
                 </a>
                 <a href="#simulator"
                     class="px-4 py-2 text-sm font-semibold text-white bg-brand-600 rounded-lg shadow-lg hover:bg-brand-500 transition-all flex items-center space-x-2">
@@ -228,6 +235,25 @@
                             파이프라인 분석 효율성 극대화.</p>
                     </div>
                 </div>
+            </div>
+
+            <!-- Regional Issue Data Analysis Card -->
+            <div
+                class="mt-8 glass-card p-6 rounded-2xl border border-brand-500/30 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div class="flex items-center space-x-4">
+                    <div class="p-3 bg-brand-500/20 text-brand-400 rounded-xl">
+                        <i data-lucide="map-pin" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-bold text-white">지역 문제 데이터 분석</h4>
+                        <p class="text-slate-400 text-sm">아동 안전구역 및 지역 공간 데이터 세부 분석 현황을 확인하실 수 있습니다.</p>
+                    </div>
+                </div>
+                <a href="./kids/index.html"
+                    class="px-5 py-2.5 text-sm font-semibold text-white bg-brand-600 hover:bg-brand-500 rounded-xl transition-all flex items-center space-x-2 shrink-0 shadow-md">
+                    <span>상세보기</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
             </div>
         </div>
     </section>
