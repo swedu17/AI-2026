@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +10,9 @@
     <!-- Google Fonts Inter & Noto Sans KR -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400;500;700;900&display=swap"
+        rel="stylesheet">
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script>
@@ -39,16 +42,19 @@
             backdrop-filter: blur(12px);
             border: 1px solid rgba(229, 231, 235, 0.8);
         }
+
         .gradient-text {
             background: linear-gradient(135deg, #16a34a 0%, #0d9488 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+
         .gradient-bg {
             background: linear-gradient(135deg, #16a34a 0%, #0f766e 100%);
         }
     </style>
 </head>
+
 <body class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-col justify-between">
 
     <!-- Top Navigation Header -->
@@ -56,8 +62,8 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
             <!-- Navigation Left: Home Button -->
             <div class="flex items-center gap-3">
-                <a href="../index.html" 
-                   class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-medium text-sm transition-all duration-200 shadow-sm hover:shadow active:scale-95">
+                <a href="../index.html"
+                    class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-medium text-sm transition-all duration-200 shadow-sm hover:shadow active:scale-95">
                     <i class="fa-solid fa-house text-emerald-400"></i>
                     <span>홈으로 이동</span>
                 </a>
@@ -65,19 +71,21 @@
 
             <!-- Brand Logo & Title -->
             <div class="flex items-center gap-2.5">
-                <div class="w-9 h-9 rounded-xl gradient-bg flex items-center justify-center text-white shadow-md shadow-emerald-500/20">
+                <div
+                    class="w-9 h-9 rounded-xl gradient-bg flex items-center justify-center text-white shadow-md shadow-emerald-500/20">
                     <i class="fa-solid fa-utensils text-lg"></i>
                 </div>
                 <div class="text-left">
-                    <span class="font-extrabold text-lg text-slate-900 tracking-tight block leading-none">Meal Service</span>
+                    <span class="font-extrabold text-lg text-slate-900 tracking-tight block leading-none">Meal
+                        Service</span>
                     <span class="text-[11px] font-medium text-slate-500 tracking-wider uppercase">서비스 요약 리포트</span>
                 </div>
             </div>
 
             <!-- Right Action: Visit Live WebApp -->
             <div class="flex items-center">
-                <a href="https://meal-service-theta.vercel.app/" target="_blank" rel="noopener noreferrer" 
-                   class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-700 font-semibold text-sm border border-emerald-200/60 transition-all">
+                <a href="https://meal-service-theta.vercel.app/" target="_blank" rel="noopener noreferrer"
+                    class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-700 font-semibold text-sm border border-emerald-200/60 transition-all">
                     <span>원본 앱 바로가기</span>
                     <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
                 </a>
@@ -89,33 +97,42 @@
     <main class="flex-grow">
         <!-- Hero Banner -->
         <section class="relative overflow-hidden bg-white border-b border-slate-200 py-12 md:py-16">
-            <div class="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))] -z-10"></div>
+            <div
+                class="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))] -z-10">
+            </div>
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                     <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-                        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-100/80 text-emerald-800 text-xs font-semibold">
+                        <div
+                            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-100/80 text-emerald-800 text-xs font-semibold">
                             <i class="fa-solid fa-bolt text-emerald-600"></i>
                             교육부 NEIS OpenAPI 연동 기반 급식 조회 서비스
                         </div>
-                        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                        <h1
+                            class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
                             전국 초·중·고등학교 급식 식단<br class="hidden sm:inline">
                             <span class="gradient-text">쉽고 빠르고 명확하게 확인</span>
                         </h1>
                         <p class="text-slate-600 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                            <strong>Meal Service</strong>는 전국 초·중·고등학교의 식단표, 영양성분, 알레르기 유발 정보를 실시간으로 조회하고 편리하게 관리할 수 있도록 제작된 웹 애플리케이션입니다.
+                            <strong>Meal Service</strong>는 전국 초·중·고등학교의 식단표, 영양성분, 알레르기 유발 정보를 실시간으로 조회하고 편리하게 관리할 수 있도록
+                            제작된 웹 애플리케이션입니다.
                         </p>
-                        
+
                         <!-- Quick Stats Badges -->
-                        <div class="pt-2 flex flex-wrap justify-center lg:justify-start gap-4 text-xs sm:text-sm font-medium text-slate-600">
-                            <div class="flex items-center gap-2 bg-slate-100 px-3.5 py-2 rounded-lg border border-slate-200">
+                        <div
+                            class="pt-2 flex flex-wrap justify-center lg:justify-start gap-4 text-xs sm:text-sm font-medium text-slate-600">
+                            <div
+                                class="flex items-center gap-2 bg-slate-100 px-3.5 py-2 rounded-lg border border-slate-200">
                                 <i class="fa-solid fa-school text-emerald-600"></i>
                                 <span>전국 12,000+ 학교 지원</span>
                             </div>
-                            <div class="flex items-center gap-2 bg-slate-100 px-3.5 py-2 rounded-lg border border-slate-200">
+                            <div
+                                class="flex items-center gap-2 bg-slate-100 px-3.5 py-2 rounded-lg border border-slate-200">
                                 <i class="fa-solid fa-triangle-exclamation text-amber-500"></i>
                                 <span>1~19번 알레르기 정보 표시</span>
                             </div>
-                            <div class="flex items-center gap-2 bg-slate-100 px-3.5 py-2 rounded-lg border border-slate-200">
+                            <div
+                                class="flex items-center gap-2 bg-slate-100 px-3.5 py-2 rounded-lg border border-slate-200">
                                 <i class="fa-solid fa-mobile-screen text-indigo-500"></i>
                                 <span>모바일/PC 완벽 최적화</span>
                             </div>
@@ -124,27 +141,31 @@
 
                     <!-- App Visual Summary Box -->
                     <div class="lg:col-span-5">
-                        <div class="bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl p-6 text-white shadow-xl relative overflow-hidden border border-slate-700">
+                        <div
+                            class="bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl p-6 text-white shadow-xl relative overflow-hidden border border-slate-700">
                             <div class="flex items-center justify-between pb-4 border-b border-slate-700/80 mb-4">
                                 <div class="flex items-center gap-2">
                                     <div class="w-3 h-3 rounded-full bg-rose-500"></div>
                                     <div class="w-3 h-3 rounded-full bg-amber-500"></div>
                                     <div class="w-3 h-3 rounded-full bg-emerald-500"></div>
                                 </div>
-                                <span class="text-xs text-slate-400 font-mono">https://meal-service-theta.vercel.app</span>
+                                <span
+                                    class="text-xs text-slate-400 font-mono">https://meal-service-theta.vercel.app</span>
                             </div>
-                            
+
                             <!-- Mock UI Preview -->
                             <div class="space-y-4">
-                                <div class="bg-slate-800/80 p-3 rounded-xl border border-slate-700 flex items-center gap-3">
+                                <div
+                                    class="bg-slate-800/80 p-3 rounded-xl border border-slate-700 flex items-center gap-3">
                                     <i class="fa-solid fa-magnifying-glass text-slate-400"></i>
                                     <span class="text-xs text-slate-300">학교명을 입력하세요 (예: 서울고등학교)</span>
                                 </div>
-                                
+
                                 <div class="bg-emerald-950/50 border border-emerald-500/30 rounded-xl p-4 space-y-2">
                                     <div class="flex justify-between items-center">
                                         <span class="text-xs font-bold text-emerald-400">오늘의 점심 식단</span>
-                                        <span class="text-[10px] bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded">중식</span>
+                                        <span
+                                            class="text-[10px] bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded">중식</span>
                                     </div>
                                     <ul class="text-xs text-slate-200 space-y-1 font-mono">
                                         <li>• 발아현미밥</li>
@@ -171,8 +192,10 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Feature 1 -->
-                <div class="bg-white rounded-2xl p-6 border border-slate-200 hover:shadow-lg transition-all duration-300 group">
-                    <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-xl font-bold mb-4 group-hover:scale-110 transition-transform">
+                <div
+                    class="bg-white rounded-2xl p-6 border border-slate-200 hover:shadow-lg transition-all duration-300 group">
+                    <div
+                        class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 flex items-center justify-center text-xl font-bold mb-4 group-hover:scale-110 transition-transform">
                         <i class="fa-solid fa-magnifying-glass font-bold"></i>
                     </div>
                     <h3 class="text-lg font-bold text-slate-900 mb-2">실시간 학교 검색</h3>
@@ -182,8 +205,10 @@
                 </div>
 
                 <!-- Feature 2 -->
-                <div class="bg-white rounded-2xl p-6 border border-slate-200 hover:shadow-lg transition-all duration-300 group">
-                    <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center text-xl font-bold mb-4 group-hover:scale-110 transition-transform">
+                <div
+                    class="bg-white rounded-2xl p-6 border border-slate-200 hover:shadow-lg transition-all duration-300 group">
+                    <div
+                        class="w-12 h-12 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center text-xl font-bold mb-4 group-hover:scale-110 transition-transform">
                         <i class="fa-solid fa-shield-halved"></i>
                     </div>
                     <h3 class="text-lg font-bold text-slate-900 mb-2">알레르기 유발 정보 안내</h3>
@@ -193,8 +218,10 @@
                 </div>
 
                 <!-- Feature 3 -->
-                <div class="bg-white rounded-2xl p-6 border border-slate-200 hover:shadow-lg transition-all duration-300 group">
-                    <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center text-xl font-bold mb-4 group-hover:scale-110 transition-transform">
+                <div
+                    class="bg-white rounded-2xl p-6 border border-slate-200 hover:shadow-lg transition-all duration-300 group">
+                    <div
+                        class="w-12 h-12 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center text-xl font-bold mb-4 group-hover:scale-110 transition-transform">
                         <i class="fa-regular fa-calendar-days"></i>
                     </div>
                     <h3 class="text-lg font-bold text-slate-900 mb-2">일자별/주간 식단 뷰er</h3>
@@ -204,8 +231,10 @@
                 </div>
 
                 <!-- Feature 4 -->
-                <div class="bg-white rounded-2xl p-6 border border-slate-200 hover:shadow-lg transition-all duration-300 group">
-                    <div class="w-12 h-12 rounded-xl bg-purple-100 text-purple-600 flex items-center justify-center text-xl font-bold mb-4 group-hover:scale-110 transition-transform">
+                <div
+                    class="bg-white rounded-2xl p-6 border border-slate-200 hover:shadow-lg transition-all duration-300 group">
+                    <div
+                        class="w-12 h-12 rounded-xl bg-purple-100 text-purple-600 flex items-center justify-center text-xl font-bold mb-4 group-hover:scale-110 transition-transform">
                         <i class="fa-solid fa-star"></i>
                     </div>
                     <h3 class="text-lg font-bold text-slate-900 mb-2">자주 찾는 학교 즐겨찾기</h3>
@@ -215,8 +244,10 @@
                 </div>
 
                 <!-- Feature 5 -->
-                <div class="bg-white rounded-2xl p-6 border border-slate-200 hover:shadow-lg transition-all duration-300 group">
-                    <div class="w-12 h-12 rounded-xl bg-rose-100 text-rose-600 flex items-center justify-center text-xl font-bold mb-4 group-hover:scale-110 transition-transform">
+                <div
+                    class="bg-white rounded-2xl p-6 border border-slate-200 hover:shadow-lg transition-all duration-300 group">
+                    <div
+                        class="w-12 h-12 rounded-xl bg-rose-100 text-rose-600 flex items-center justify-center text-xl font-bold mb-4 group-hover:scale-110 transition-transform">
                         <i class="fa-solid fa-chart-pie"></i>
                     </div>
                     <h3 class="text-lg font-bold text-slate-900 mb-2">영양 성분 상세 정보</h3>
@@ -226,8 +257,10 @@
                 </div>
 
                 <!-- Feature 6 -->
-                <div class="bg-white rounded-2xl p-6 border border-slate-200 hover:shadow-lg transition-all duration-300 group">
-                    <div class="w-12 h-12 rounded-xl bg-teal-100 text-teal-600 flex items-center justify-center text-xl font-bold mb-4 group-hover:scale-110 transition-transform">
+                <div
+                    class="bg-white rounded-2xl p-6 border border-slate-200 hover:shadow-lg transition-all duration-300 group">
+                    <div
+                        class="w-12 h-12 rounded-xl bg-teal-100 text-teal-600 flex items-center justify-center text-xl font-bold mb-4 group-hover:scale-110 transition-transform">
                         <i class="fa-solid fa-bolt"></i>
                     </div>
                     <h3 class="text-lg font-bold text-slate-900 mb-2">빠른 웹 로딩 & Vercel 배포</h3>
@@ -242,8 +275,11 @@
         <section class="py-12 bg-slate-100/80 border-y border-slate-200">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center max-w-2xl mx-auto mb-8">
-                    <span class="text-xs font-bold uppercase tracking-wider text-emerald-600 bg-emerald-100 px-3 py-1 rounded-full">Interactive Demo</span>
-                    <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mt-2">서비스 가상 체험 (알레르기 가이드)</h2>
+                    <span
+                        class="text-xs font-bold uppercase tracking-wider text-emerald-600 bg-emerald-100 px-3 py-1 rounded-full">Interactive
+                        Demo</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mt-2">서비스 가상 체험 (알레르기
+                        가이드)</h2>
                     <p class="text-slate-600 text-sm mt-1">아래 알레르기 성분을 클릭하여 메뉴에 표시되는 유발 번호를 확인해보세요.</p>
                 </div>
 
@@ -259,7 +295,8 @@
                             <span class="font-bold text-slate-800 text-sm flex items-center gap-2">
                                 <i class="fa-solid fa-utensils text-emerald-600"></i> 예시 급식 메뉴 (오늘의 중식)
                             </span>
-                            <span id="active-allergy-count" class="text-xs bg-amber-100 text-amber-800 font-medium px-2.5 py-1 rounded-full">
+                            <span id="active-allergy-count"
+                                class="text-xs bg-amber-100 text-amber-800 font-medium px-2.5 py-1 rounded-full">
                                 알레르기 번호 활성화: 전체 보기
                             </span>
                         </div>
@@ -331,12 +368,15 @@
         <section class="py-12 bg-white border-t border-slate-200">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-2xl font-extrabold text-slate-900 text-center mb-8">자주 묻는 질문 (FAQ)</h2>
-                
+
                 <div class="space-y-4" id="faq-container">
                     <div class="border border-slate-200 rounded-xl overflow-hidden">
-                        <button class="w-full text-left p-4 font-semibold text-slate-800 flex justify-between items-center bg-slate-50 hover:bg-slate-100 transition-colors" onclick="toggleFaq(1)">
+                        <button
+                            class="w-full text-left p-4 font-semibold text-slate-800 flex justify-between items-center bg-slate-50 hover:bg-slate-100 transition-colors"
+                            onclick="toggleFaq(1)">
                             <span>Q. 학교 급식 정보는 어디에서 가져오나요?</span>
-                            <i class="fa-solid fa-chevron-down text-slate-400 text-sm transition-transform duration-200" id="faq-icon-1"></i>
+                            <i class="fa-solid fa-chevron-down text-slate-400 text-sm transition-transform duration-200"
+                                id="faq-icon-1"></i>
                         </button>
                         <div class="p-4 text-sm text-slate-600 border-t border-slate-200 hidden" id="faq-ans-1">
                             교육부에서 운영하는 나이스(NEIS) 교육정보 개방 포털 Open API를 통해 정식으로 수집한 공공데이터 기반입니다.
@@ -344,9 +384,12 @@
                     </div>
 
                     <div class="border border-slate-200 rounded-xl overflow-hidden">
-                        <button class="w-full text-left p-4 font-semibold text-slate-800 flex justify-between items-center bg-slate-50 hover:bg-slate-100 transition-colors" onclick="toggleFaq(2)">
+                        <button
+                            class="w-full text-left p-4 font-semibold text-slate-800 flex justify-between items-center bg-slate-50 hover:bg-slate-100 transition-colors"
+                            onclick="toggleFaq(2)">
                             <span>Q. 메뉴 옆의 숫자(예: 1.5.6)는 무엇인가요?</span>
-                            <i class="fa-solid fa-chevron-down text-slate-400 text-sm transition-transform duration-200" id="faq-icon-2"></i>
+                            <i class="fa-solid fa-chevron-down text-slate-400 text-sm transition-transform duration-200"
+                                id="faq-icon-2"></i>
                         </button>
                         <div class="p-4 text-sm text-slate-600 border-t border-slate-200 hidden" id="faq-ans-2">
                             식약처 고시 19가지 알레르기 유발 물질 표기 번호입니다. (1: 난류, 2: 우유, 3: 메밀, 5: 대두, 6: 밀 등)
@@ -354,12 +397,16 @@
                     </div>
 
                     <div class="border border-slate-200 rounded-xl overflow-hidden">
-                        <button class="w-full text-left p-4 font-semibold text-slate-800 flex justify-between items-center bg-slate-50 hover:bg-slate-100 transition-colors" onclick="toggleFaq(3)">
+                        <button
+                            class="w-full text-left p-4 font-semibold text-slate-800 flex justify-between items-center bg-slate-50 hover:bg-slate-100 transition-colors"
+                            onclick="toggleFaq(3)">
                             <span>Q. 상단 홈버튼을 누르면 어디로 이동하나요?</span>
-                            <i class="fa-solid fa-chevron-down text-slate-400 text-sm transition-transform duration-200" id="faq-icon-3"></i>
+                            <i class="fa-solid fa-chevron-down text-slate-400 text-sm transition-transform duration-200"
+                                id="faq-icon-3"></i>
                         </button>
                         <div class="p-4 text-sm text-slate-600 border-t border-slate-200 hidden" id="faq-ans-3">
-                            상단의 검은색 <strong>'홈으로 이동'</strong> 버튼을 클릭하면 요청하신 대로 상위 디렉터리의 <code>../index.html</code> 페이지로 이동합니다.
+                            상단의 검은색 <strong>'홈으로 이동'</strong> 버튼을 클릭하면 요청하신 대로 상위 디렉터리의 <code>../index.html</code> 페이지로
+                            이동합니다.
                         </div>
                     </div>
                 </div>
@@ -371,11 +418,13 @@
     <footer class="bg-slate-900 text-slate-400 py-8 border-t border-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
             <div class="flex items-center justify-center gap-3">
-                <a href="../index.html" class="text-slate-300 hover:text-white text-sm font-medium transition-colors inline-flex items-center gap-1.5">
+                <a href="../index.html"
+                    class="text-slate-300 hover:text-white text-sm font-medium transition-colors inline-flex items-center gap-1.5">
                     <i class="fa-solid fa-house text-emerald-400"></i> 홈으로 이동 (../index.html)
                 </a>
                 <span class="text-slate-700">•</span>
-                <a href="https://meal-service-theta.vercel.app/" target="_blank" rel="noopener noreferrer" class="text-slate-300 hover:text-white text-sm font-medium transition-colors inline-flex items-center gap-1.5">
+                <a href="https://meal-service-theta.vercel.app/" target="_blank" rel="noopener noreferrer"
+                    class="text-slate-300 hover:text-white text-sm font-medium transition-colors inline-flex items-center gap-1.5">
                     <i class="fa-solid fa-external-link text-emerald-400"></i> 원본 웹사이트 방문
                 </a>
             </div>
@@ -436,8 +485,8 @@
                 const hasMatch = selectedAllergy && item.allergies.includes(selectedAllergy);
                 const div = document.createElement('div');
                 div.className = `p-3 rounded-lg border flex justify-between items-center transition-all ${hasMatch ? 'bg-amber-50 border-amber-300 shadow-sm' : 'bg-white border-slate-200'}`;
-                
-                const allergyBadge = item.allergies.length > 0 
+
+                const allergyBadge = item.allergies.length > 0
                     ? `<span class="text-xs font-mono px-2 py-0.5 rounded ${hasMatch ? 'bg-amber-500 text-white font-bold' : 'bg-slate-100 text-slate-600'}">(${item.allergies.join('.')})</span>`
                     : '<span class="text-[11px] text-slate-400">안전</span>';
 
@@ -478,4 +527,5 @@
         });
     </script>
 </body>
+
 </html>
