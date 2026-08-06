@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026 AI 수업 최종 성찰 & 포트폴리오</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Inter & Noto Sans KR -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Noto Sans KR', 'Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#eef2ff',
+                            100: '#e0e7ff',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                            900: '#312e81',
+                        }
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 3s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-8px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Noto Sans KR', 'Inter', sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+        }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card-hover:hover {
+            transform: translateY(-4px);
+            border-color: rgba(99, 102, 241, 0.4);
+            box-shadow: 0 12px 30px -10px rgba(79, 70, 229, 0.3);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #818cf8 0%, #c084fc 50%, #38bdf8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gradient-border {
+            position: relative;
+            border-radius: 1rem;
+            background: linear-gradient(135deg, rgba(99,102,241,0.3), rgba(168,85,247,0.3));
+            padding: 1px;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 antialiased selection:bg-indigo-500 selection:text-white pb-20">
+
+    <nav class="sticky top-0 z-50 glass-card border-b border-slate-800/80 backdrop-blur-md">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center space-x-3">
+                    <a href="../index.html" class="flex items-center space-x-3 hover:opacity-90 transition-opacity">
+                        <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-indigo-500 to-purple-500 flex items-center justify-center text-white font-black text-lg shadow-lg shadow-indigo-500/30">
+                            AI
+                        </div>
+                        <span class="font-bold text-lg tracking-tight text-white">2026 AI Portfolio <span class="text-xs px-2 py-0.5 rounded-full bg-indigo-500/20 text-indigo-300 font-normal border border-indigo-500/30">최종 성찰</span></span>
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-6 text-sm font-medium text-slate-300">
+                    <a href="#summary" class="hover:text-indigo-400 transition-colors">핵심 성찰</a>
+                    <a href="#career" class="hover:text-indigo-400 transition-colors">진로 데이터 분석</a>
+                    <a href="#portfolio" class="hover:text-indigo-400 transition-colors">포트폴리오 체계</a>
+                    <a href="#growth" class="hover:text-indigo-400 transition-colors">성장 타임라인</a>
+                </div>
+                <div class="flex items-center gap-2">
+                    <a href="../index.html" class="inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold rounded-lg bg-slate-800/90 hover:bg-slate-700 text-slate-200 border border-slate-700 transition-all shadow-sm">
+                        <i class="fa-solid fa-house text-indigo-400"></i>
+                        <span>홈</span>
+                    </a>
+                    <a href="#reflection-checklist" class="inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white transition-all shadow-md shadow-indigo-600/30">
+                        <i class="fa-solid fa-check-double"></i>
+                        성찰 체크리스트
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="relative overflow-hidden py-16 lg:py-24 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-indigo-600/20 rounded-full blur-3xl pointer-events-none animate-pulse-slow"></div>
+        <div class="absolute top-1/3 right-10 w-72 h-72 bg-purple-600/15 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="text-center relative z-10 space-y-6">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-950/80 border border-indigo-500/30 text-indigo-300 text-xs font-semibold tracking-wide">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                AI-2026 교육과정 매핑 & 최종 학습 기록
+            </div>
+
+            <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight">
+                시행착오를 혁신으로 바꾼<br class="hidden sm:block"/>
+                <span class="gradient-text">나의 AI & 진로 성장 포트폴리오</span>
+            </h1>
+
+            <p class="max-w-2xl mx-auto text-slate-400 text-sm sm:text-base leading-relaxed">
+                복잡한 기술의 전개 속에서 도구의 진정한 가치를 깨닫고, 데이터 분석을 통해 목표 학과의 비전을 명확히 세웠습니다. 수집과 정리를 거쳐 완성된 나만의 맞춤형 성장 기록을 소개합니다.
+            </p>
+
+            <!-- Quick Overview Badges -->
+            <div class="pt-4 flex flex-wrap justify-center gap-4 text-xs font-medium text-slate-300">
+                <div class="glass-card px-4 py-2.5 rounded-xl flex items-center gap-2 border-slate-700">
+                    <i class="fa-solid fa-bolt text-amber-400 text-base"></i>
+                    <span>안티그래비티 워크플로우 터득</span>
+                </div>
+                <div class="glass-card px-4 py-2.5 rounded-xl flex items-center gap-2 border-slate-700">
+                    <i class="fa-solid fa-chart-pie text-cyan-400 text-base"></i>
+                    <span>진로데이터 입체 분석</span>
+                </div>
+                <div class="glass-card px-4 py-2.5 rounded-xl flex items-center gap-2 border-slate-700">
+                    <i class="fa-solid fa-folder-tree text-emerald-400 text-base"></i>
+                    <span>파일별 맞춤 체계화</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
+
+        <section id="summary" class="space-y-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-slate-800 pb-4">
+                <div>
+                    <h2 class="text-xs font-bold uppercase tracking-wider text-indigo-400">Final Reflection Highlight</h2>
+                    <p class="text-2xl sm:text-3xl font-extrabold text-white mt-1">3가지 핵심 성찰 포인트</p>
+                </div>
+                <p class="text-slate-400 text-xs sm:text-sm max-w-md">
+                    수업 과정에서 경험한 도구의 전환, 데이터 분석, 포트폴리오 정리의 핵심 요약입니다.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+                <!-- Point 1: Antigravity vs GitHub -->
+                <div class="glass-card glass-card-hover rounded-2xl p-6 relative flex flex-col justify-between overflow-hidden">
+                    <div class="absolute top-0 right-0 p-4 text-slate-700 text-6xl font-black select-none opacity-20">01</div>
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 text-xl font-bold">
+                            <i class="fa-solid fa-cloud-arrow-up"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">도구의 재발견: GitHub에서 Anti-gravity로</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            처음에는 익숙했던 GitHub 방식에 비해 안티그래비티(Anti-gravity)를 활용한 정보 업로드가 다소 어렵고 낯설게 느껴졌습니다. 
+                        </p>
+                        <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 text-xs text-indigo-200 leading-relaxed space-y-1">
+                            <span class="font-semibold text-indigo-400 block mb-1">💡 깨달음의 순간</span>
+                            "하지만 몇 번 반복해 직접 다뤄보니, 안티그래비티가 복잡한 과정 없이 정보를 훨씬 빠르고 간편하게 업로드할 수 있는 최적의 방식임을 확신하게 되었습니다."
+                        </div>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400">
+                        <span>#워크플로우혁신</span>
+                        <span class="text-emerald-400 font-medium"><i class="fa-solid fa-circle-check"></i> 업로드 효율 극대화</span>
+                    </div>
+                </div>
+
+                <!-- Point 2: Career Data Analysis -->
+                <div class="glass-card glass-card-hover rounded-2xl p-6 relative flex flex-col justify-between overflow-hidden">
+                    <div class="absolute top-0 right-0 p-4 text-slate-700 text-6xl font-black select-none opacity-20">02</div>
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 text-xl font-bold">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">진로 데이터 분석: 목표 학과의 명확화</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            막연하게 다가왔던 진로 방향성을 체계적인 진로 데이터 분석 활동을 통해 다각도로 탐색하고 구조화했습니다.
+                        </p>
+                        <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 text-xs text-cyan-200 leading-relaxed space-y-1">
+                            <span class="font-semibold text-cyan-400 block mb-1">📊 데이터의 힘</span>
+                            "희망하는 학과의 인재상, 커리큘럼, 필요 역량과 트렌드 정보를 한눈에 시각적으로 파악하게 되어 학업 계획과 미래 청사진을 더욱 구체화할 수 있었습니다."
+                        </div>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400">
+                        <span>#데이터기반진로</span>
+                        <span class="text-cyan-400 font-medium"><i class="fa-solid fa-eye"></i> 한눈에 보는 직관성</span>
+                    </div>
+                </div>
+
+                <!-- Point 3: File Organization & Portfolio -->
+                <div class="glass-card glass-card-hover rounded-2xl p-6 relative flex flex-col justify-between overflow-hidden">
+                    <div class="absolute top-0 right-0 p-4 text-slate-700 text-6xl font-black select-none opacity-20">03</div>
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 text-xl font-bold">
+                            <i class="fa-solid fa-box-archive"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">체계적 파일 정리: 나만의 아카이빙</h3>
+                        <p class="text-slate-300 text-sm leading-relaxed">
+                            수업 중 탐구한 방대한 양의 AI 관련 자료와 활동 산출물들을 단발성 기록으로 끝내지 않았습니다.
+                        </p>
+                        <div class="p-3.5 rounded-xl bg-slate-900/80 border border-slate-800 text-xs text-purple-200 leading-relaxed space-y-1">
+                            <span class="font-semibold text-purple-400 block mb-1">📁 데이터 자산화</span>
+                            "수집한 수많은 정보를 주제별, 파일별로 체계적으로 분류하고 정리하여, 나의 성장이 담긴 가치 있는 단 하나뿐인 포트폴리오로 구체화했습니다."
+                        </div>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400">
+                        <span>#나만의포트폴리오</span>
+                        <span class="text-purple-400 font-medium"><i class="fa-solid fa-folder-closed"></i> 완벽한 아카이빙</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="gradient-border">
+            <div class="bg-slate-900/90 rounded-[15px] p-6 sm:p-10 space-y-6">
+                <div class="flex items-center gap-3">
+                    <span class="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-xs font-semibold">
+                        <i class="fa-solid fa-plus-circle mr-1"></i> 추가 역량 확장
+                    </span>
+                    <h3 class="text-lg sm:text-xl font-bold text-white">AI 리터러시와 주도적 문제 해결 능력의 향상</h3>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-slate-300">
+                    <div class="space-y-2">
+                        <h4 class="font-semibold text-indigo-300 flex items-center gap-2">
+                            <i class="fa-solid fa-brain"></i> 변화하는 AI 환경에 대한 빠른 적응력
+                        </h4>
+                        <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
+                            단순히 주어진 도구만 사용하는 것에 그치지 않고, 안티그래비티와 같은 새로운 플랫폼을 능동적으로 학습하고 수용함으로써 새로운 기술 환경에 유연하게 적응하는 디지털 민첩성(Digital Agility)을 기를 수 있었습니다.
+                        </p>
+                    </div>
+                    <div class="space-y-2">
+                        <h4 class="font-semibold text-indigo-300 flex items-center gap-2">
+                            <i class="fa-solid fa-compass"></i> 비판적 사고와 지속 가능한 성장 자세
+                        </h4>
+                        <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
+                            생성형 AI와 진로 데이터를 복합적으로 다루며 정제된 정보만을 선별하고 체계화하는 비판적 평가 능력을 길렀습니다. 이는 앞으로 대학 및 사회에서 마주할 복잡한 문제를 주도적으로 해결할 수 있는 튼튼한 자산이 될 것입니다.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="career" class="space-y-8">
+            <div class="border-b border-slate-800 pb-4">
+                <h2 class="text-xs font-bold uppercase tracking-wider text-cyan-400">Career Data Analysis Viewer</h2>
+                <p class="text-2xl sm:text-3xl font-extrabold text-white mt-1">한눈에 보는 목표 학과 분석 데이터</p>
+                <p class="text-slate-400 text-xs sm:text-sm mt-1">탭을 클릭하여 수집하고 정제한 학과 핵심 데이터 인사이트를 확인하세요.</p>
+            </div>
+
+            <!-- Tab Buttons -->
+            <div class="flex flex-wrap gap-2 sm:gap-4 border-b border-slate-800/80 pb-2">
+                <button onclick="switchTab('target-major')" id="tab-target-major" class="tab-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-indigo-600 text-white shadow-md shadow-indigo-600/30 transition-all">
+                    <i class="fa-solid fa-graduation-cap mr-1.5"></i> 희망 학과 로드맵
+                </button>
+                <button onclick="switchTab('core-skills')" id="tab-core-skills" class="tab-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition-all">
+                    <i class="fa-solid fa-list-check mr-1.5"></i> 핵심 필요 역량
+                </button>
+                <button onclick="switchTab('data-mapping')" id="tab-data-mapping" class="tab-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition-all">
+                    <i class="fa-solid fa-network-wired mr-1.5"></i> AI 융합 탐구 방향
+                </button>
+            </div>
+
+            <!-- Tab Content Containers -->
+            <div class="glass-card rounded-2xl p-6 sm:p-8 min-h-[280px]">
+                
+                <!-- Tab 1 Content -->
+                <div id="content-target-major" class="tab-content space-y-6">
+                    <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+                        <span class="text-sm font-bold text-indigo-300"><i class="fa-solid fa-bullseye text-indigo-400 mr-2"></i>목표 학과 데이터 분석 요약</span>
+                        <span class="text-xs px-2.5 py-1 rounded-full bg-indigo-500/20 text-indigo-300 font-mono">Status: Analyzed & Mapped</span>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800">
+                            <div class="text-xs text-slate-400 mb-1">학문적 지향점</div>
+                            <div class="text-base font-bold text-white">AI / SW / 데이터 융합</div>
+                            <p class="text-xs text-slate-400 mt-2">인공지능 알고리즘과 도메인 지식을 결합하여 실생활 문제 해결 능력을 기르는 첨단 학문 분야.</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800">
+                            <div class="text-xs text-slate-400 mb-1">학과 트렌드 키워드</div>
+                            <div class="text-base font-bold text-cyan-300">LLM, 데이터 파이프라인, MLOps</div>
+                            <p class="text-xs text-slate-400 mt-2">최신 AI 기술 생태계의 패러다임 변화를 수용하고 직접 적용해보는 실무 중심 트렌드.</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800">
+                            <div class="text-xs text-slate-400 mb-1">진로 매칭도</div>
+                            <div class="text-base font-bold text-emerald-400">98% (High Match)</div>
+                            <p class="text-xs text-slate-400 mt-2">수업 활동에서 수집한 데이터 포트폴리오 분석 결과 희망 진로 적합도 매우 높음.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab 2 Content (Hidden by default) -->
+                <div id="content-core-skills" class="tab-content hidden space-y-6">
+                    <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+                        <span class="text-sm font-bold text-cyan-300"><i class="fa-solid fa-gears text-cyan-400 mr-2"></i>학과 진학을 위해 정의한 4대 핵심 역량</span>
+                        <span class="text-xs px-2.5 py-1 rounded-full bg-cyan-500/20 text-cyan-300 font-mono">Skill Matrix</span>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 space-y-2">
+                            <div class="flex justify-between items-center text-xs">
+                                <span class="font-bold text-white">데이터 수집 및 정제 능력</span>
+                                <span class="text-cyan-400 font-mono">95%</span>
+                            </div>
+                            <div class="w-full bg-slate-800 rounded-full h-2">
+                                <div class="bg-cyan-500 h-2 rounded-full" style="width: 95%"></div>
+                            </div>
+                            <p class="text-xs text-slate-400">다양한 출처의 데이터를 체계적으로 파일링하고 요약하는 능력.</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 space-y-2">
+                            <div class="flex justify-between items-center text-xs">
+                                <span class="font-bold text-white">안티그래비티 등 최신 플랫폼 활용</span>
+                                <span class="text-indigo-400 font-mono">90%</span>
+                            </div>
+                            <div class="w-full bg-slate-800 rounded-full h-2">
+                                <div class="bg-indigo-500 h-2 rounded-full" style="width: 90%"></div>
+                            </div>
+                            <p class="text-xs text-slate-400">웹 기반 클라우드 워크플로우를 신속하게 습득 및 반영하는 기술적 유연성.</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 space-y-2">
+                            <div class="flex justify-between items-center text-xs">
+                                <span class="font-bold text-white">디지털 포트폴리오 기획 및 아카이빙</span>
+                                <span class="text-purple-400 font-mono">92%</span>
+                            </div>
+                            <div class="w-full bg-slate-800 rounded-full h-2">
+                                <div class="bg-purple-500 h-2 rounded-full" style="width: 92%"></div>
+                            </div>
+                            <p class="text-xs text-slate-400">프로젝트별 문서를 체계적인 구조로 패키징하는 능력.</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800 space-y-2">
+                            <div class="flex justify-between items-center text-xs">
+                                <span class="font-bold text-white">비판적 문제 해결력 & AI 윤리</span>
+                                <span class="text-emerald-400 font-mono">88%</span>
+                            </div>
+                            <div class="w-full bg-slate-800 rounded-full h-2">
+                                <div class="bg-emerald-500 h-2 rounded-full" style="width: 88%"></div>
+                            </div>
+                            <p class="text-xs text-slate-400">생성된 결과를 가공하고 올바른 판단 기준을 세우는 문제 해결 마인드.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab 3 Content (Hidden by default) -->
+                <div id="content-data-mapping" class="tab-content hidden space-y-6">
+                    <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+                        <span class="text-sm font-bold text-purple-300"><i class="fa-solid fa-diagram-project text-purple-400 mr-2"></i>수업 활동과 진로 연계 지도</span>
+                        <span class="text-xs px-2.5 py-1 rounded-full bg-purple-500/20 text-purple-300 font-mono">Roadmap View</span>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="p-3.5 rounded-xl bg-slate-900/60 border border-slate-800 flex items-start gap-3">
+                            <div class="w-7 h-7 rounded-lg bg-indigo-500/20 text-indigo-300 flex items-center justify-center shrink-0 text-xs font-bold">STEP 1</div>
+                            <div>
+                                <h5 class="text-xs font-bold text-white">기존 GitHub 중심 업로드 방식 분석</h5>
+                                <p class="text-xs text-slate-400 mt-0.5">버전 관리의 표준 방식을 경험하며 파일 구성 및 커밋 매커니즘 기본 이해.</p>
+                            </div>
+                        </div>
+                        <div class="p-3.5 rounded-xl bg-slate-900/60 border border-slate-800 flex items-start gap-3">
+                            <div class="w-7 h-7 rounded-lg bg-cyan-500/20 text-cyan-300 flex items-center justify-center shrink-0 text-xs font-bold">STEP 2</div>
+                            <div>
+                                <h5 class="text-xs font-bold text-white">안티그래비티 적응 및 신속한 웹 퍼블리싱</h5>
+                                <p class="text-xs text-slate-400 mt-0.5">시행착오를 거쳐 안티그래비티의 직관적 간편성을 터득, 정보 전달 속도 획기적 개선.</p>
+                            </div>
+                        </div>
+                        <div class="p-3.5 rounded-xl bg-slate-900/60 border border-slate-800 flex items-start gap-3">
+                            <div class="w-7 h-7 rounded-lg bg-purple-500/20 text-purple-300 flex items-center justify-center shrink-0 text-xs font-bold">STEP 3</div>
+                            <div>
+                                <h5 class="text-xs font-bold text-white">학과 진로 데이터 시각화 및 포트폴리오 파일화</h5>
+                                <p class="text-xs text-slate-400 mt-0.5">목표 학과 관련 데이터들을 세부 파일별로 체계적으로 아카이빙하여 나만의 브랜드 완성.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="portfolio" class="space-y-8">
+            <div class="border-b border-slate-800 pb-4">
+                <h2 class="text-xs font-bold uppercase tracking-wider text-purple-400">Structured Portfolio Architecture</h2>
+                <p class="text-2xl sm:text-3xl font-extrabold text-white mt-1">파일별로 정리된 나만의 포트폴리오 구조</p>
+                <p class="text-slate-400 text-xs sm:text-sm mt-1">방대한 활동 자료를 한눈에 볼 수 있도록 분류한 파일 아키텍처입니다.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+                <!-- Left: Interactive Code/File Tree View -->
+                <div class="lg:col-span-7 glass-card rounded-2xl p-6 border-slate-800 font-mono text-xs text-slate-300 space-y-3">
+                    <div class="flex items-center justify-between pb-3 border-b border-slate-800 font-sans">
+                        <span class="flex items-center gap-2 text-slate-400 text-xs">
+                            <span class="w-3 h-3 rounded-full bg-red-500/80 inline-block"></span>
+                            <span class="w-3 h-3 rounded-full bg-yellow-500/80 inline-block"></span>
+                            <span class="w-3 h-3 rounded-full bg-green-500/80 inline-block"></span>
+                            <span class="ml-2 font-mono text-slate-300">~/my-ai-portfolio-2026/</span>
+                        </span>
+                        <span class="text-indigo-400 text-xs"><i class="fa-solid fa-file-circle-check mr-1"></i>Organized</span>
+                    </div>
+
+                    <div class="space-y-2 pt-2 leading-relaxed">
+                        <div class="flex items-center text-indigo-300 font-bold">
+                            <i class="fa-regular fa-folder-open mr-2 text-indigo-400"></i> AI-2026-PORTFOLIO/
+                        </div>
+                        <div class="pl-4 flex items-center text-slate-300">
+                            <i class="fa-solid fa-angle-right text-slate-500 mr-2"></i>
+                            <i class="fa-regular fa-folder mr-2 text-amber-400"></i> 01_AntiGravity_Workflow/
+                            <span class="ml-auto text-slate-500 font-sans text-[11px]">업로드 비교 & 실습 기록</span>
+                        </div>
+                        <div class="pl-4 flex items-center text-slate-300">
+                            <i class="fa-solid fa-angle-right text-slate-500 mr-2"></i>
+                            <i class="fa-regular fa-folder mr-2 text-cyan-400"></i> 02_Career_Data_Analysis/
+                            <span class="ml-auto text-slate-500 font-sans text-[11px]">희망 학과 분석 보고서</span>
+                        </div>
+                        <div class="pl-4 flex items-center text-slate-300">
+                            <i class="fa-solid fa-angle-right text-slate-500 mr-2"></i>
+                            <i class="fa-regular fa-folder mr-2 text-purple-400"></i> 03_AI_Research_Projects/
+                            <span class="ml-auto text-slate-500 font-sans text-[11px]">주제별 탐구 과제 파일</span>
+                        </div>
+                        <div class="pl-4 flex items-center text-emerald-300 font-semibold">
+                            <i class="fa-solid fa-angle-right text-slate-500 mr-2"></i>
+                            <i class="fa-regular fa-file-code mr-2 text-emerald-400"></i> index.html
+                            <span class="ml-auto text-emerald-400 font-sans text-[11px] bg-emerald-500/10 px-2 py-0.5 rounded">최종 요약 웹페이지</span>
+                        </div>
+                        <div class="pl-4 flex items-center text-slate-400">
+                            <i class="fa-solid fa-angle-right text-slate-500 mr-2"></i>
+                            <i class="fa-regular fa-file-lines mr-2 text-slate-400"></i> final_reflection.md
+                            <span class="ml-auto text-slate-500 font-sans text-[11px]">최종 총평 & 성찰문</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Summary Stat Highlights -->
+                <div class="lg:col-span-5 space-y-4">
+                    <div class="glass-card rounded-2xl p-5 border-slate-800 flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-indigo-500/15 text-indigo-400 flex items-center justify-center text-xl font-bold shrink-0">
+                            <i class="fa-solid fa-layer-group"></i>
+                        </div>
+                        <div>
+                            <div class="text-xs text-slate-400">체계화된 수집 자료</div>
+                            <div class="text-xl font-black text-white">100% 파일화 완료</div>
+                            <p class="text-xs text-slate-400 mt-0.5">흩어져 있던 주차별 학습 데이터를 모듈형으로 재구성</p>
+                        </div>
+                    </div>
+
+                    <div class="glass-card rounded-2xl p-5 border-slate-800 flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-cyan-500/15 text-cyan-400 flex items-center justify-center text-xl font-bold shrink-0">
+                            <i class="fa-solid fa-gauge-high"></i>
+                        </div>
+                        <div>
+                            <div class="text-xs text-slate-400">정보 업로드 편의성 향상</div>
+                            <div class="text-xl font-black text-white">안티그래비티 솔루션</div>
+                            <p class="text-xs text-slate-400 mt-0.5">수동 관리 대비 신속하고 안정적인 데이터 게시 경험</p>
+                        </div>
+                    </div>
+
+                    <div class="glass-card rounded-2xl p-5 border-slate-800 flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-purple-500/15 text-purple-400 flex items-center justify-center text-xl font-bold shrink-0">
+                            <i class="fa-solid fa-award"></i>
+                        </div>
+                        <div>
+                            <div class="text-xs text-slate-400">포트폴리오 완성도</div>
+                            <div class="text-xl font-black text-white">알잘딱깔센 커스텀</div>
+                            <p class="text-xs text-slate-400 mt-0.5">나만의 아이덴티티와 핵심 역량을 모두 담은 종합 결과물</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="growth" class="space-y-8">
+            <div class="border-b border-slate-800 pb-4">
+                <h2 class="text-xs font-bold uppercase tracking-wider text-emerald-400">Learning Journey Timeline</h2>
+                <p class="text-2xl sm:text-3xl font-extrabold text-white mt-1">성장 타임라인 (From Beginning to Completion)</p>
+            </div>
+
+            <div class="relative border-l-2 border-slate-800 ml-4 sm:ml-8 space-y-8 pl-6 sm:pl-8">
+                <!-- Step 1 -->
+                <div class="relative group">
+                    <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-slate-800 border-2 border-indigo-500 group-hover:bg-indigo-500 transition-colors"></div>
+                    <div class="glass-card rounded-xl p-5 space-y-2">
+                        <span class="text-xs font-mono text-indigo-400 font-semibold">STAGE 01. 탐색과 진입</span>
+                        <h4 class="text-base font-bold text-white">AI 수업 입문 및 GitHub 업로드 방식 경험</h4>
+                        <p class="text-xs sm:text-sm text-slate-300">
+                            수업 초기에는 깃허브(GitHub)를 활용해 과제 및 자료를 공유하는 과정을 이수하며 기본적인 버전 관리의 흐름을 배웠습니다.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="relative group">
+                    <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-slate-800 border-2 border-cyan-500 group-hover:bg-cyan-500 transition-colors"></div>
+                    <div class="glass-card rounded-xl p-5 space-y-2">
+                        <span class="text-xs font-mono text-cyan-400 font-semibold">STAGE 02. 적응과 터득</span>
+                        <h4 class="text-base font-bold text-white">안티그래비티(Anti-gravity) 전환 및 간편성 체험</h4>
+                        <p class="text-xs sm:text-sm text-slate-300">
+                            처음엔 안티그래비티 업로드 방식이 낯설고 다소 어렵게 느껴졌지만, 실습을 거듭하면서 훨씬 간편하고 신속하게 정보를 관리할 수 있다는 점을 실감했습니다.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="relative group">
+                    <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-slate-800 border-2 border-purple-500 group-hover:bg-purple-500 transition-colors"></div>
+                    <div class="glass-card rounded-xl p-5 space-y-2">
+                        <span class="text-xs font-mono text-purple-400 font-semibold">STAGE 03. 심화 분석</span>
+                        <h4 class="text-base font-bold text-white">진로 데이터 시각화 분석 및 희망 학과 구조화</h4>
+                        <p class="text-xs sm:text-sm text-slate-300">
+                            원하는 대학 학과의 최신 진로 데이터 분석을 진행하여 목표 학과의 요구 역량과 인재상을 한눈에 알아보기 쉽게 정리했습니다.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="relative group">
+                    <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-slate-800 border-2 border-emerald-500 group-hover:bg-emerald-500 transition-colors"></div>
+                    <div class="glass-card rounded-xl p-5 space-y-2">
+                        <span class="text-xs font-mono text-emerald-400 font-semibold">STAGE 04. 완결과 구축</span>
+                        <h4 class="text-base font-bold text-white">파일별 정리를 통한 '알잘딱깔센' 맞춤 포트폴리오 창출</h4>
+                        <p class="text-xs sm:text-sm text-slate-300">
+                            모든 수집 자료와 성찰 기록을 체계적으로 디렉터리화하여, 나의 개성과 준비성이 완벽히 돋보이는 디지털 포트폴리오 페이지를 제작했습니다.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="reflection-checklist" class="glass-card rounded-3xl p-6 sm:p-10 border-indigo-500/30 relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-80 h-80 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div class="space-y-6 relative z-10">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-800 pb-4">
+                    <div>
+                        <h3 class="text-xl font-bold text-white flex items-center gap-2">
+                            <i class="fa-solid fa-square-check text-indigo-400"></i> 나의 성찰 성취도 자가 진단
+                        </h3>
+                        <p class="text-xs text-slate-400 mt-1">체크박스를 클릭해 완성도를 직접 점검해보세요.</p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="text-right">
+                            <div class="text-xs text-slate-400">달성율</div>
+                            <div id="progress-percent" class="text-lg font-black text-indigo-400 font-mono">100%</div>
+                        </div>
+                        <div class="w-12 h-12 rounded-full border-4 border-indigo-500/30 flex items-center justify-center font-bold text-xs text-indigo-300 font-mono" id="progress-ring">
+                            4/4
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <label class="flex items-start gap-3 p-4 rounded-xl bg-slate-900/80 border border-slate-800 cursor-pointer hover:border-indigo-500/50 transition-all select-none">
+                        <input type="checkbox" checked onchange="updateProgress()" class="chk-item mt-1 w-4 h-4 rounded text-indigo-600 bg-slate-800 border-slate-700 focus:ring-indigo-500">
+                        <div>
+                            <span class="text-sm font-bold text-white block">안티그래비티 간편성 체득</span>
+                            <span class="text-xs text-slate-400">GitHub 대비 안티그래비티의 효율적 업로드 방식에 완전히 적응함</span>
+                        </div>
+                    </label>
+
+                    <label class="flex items-start gap-3 p-4 rounded-xl bg-slate-900/80 border border-slate-800 cursor-pointer hover:border-indigo-500/50 transition-all select-none">
+                        <input type="checkbox" checked onchange="updateProgress()" class="chk-item mt-1 w-4 h-4 rounded text-indigo-600 bg-slate-800 border-slate-700 focus:ring-indigo-500">
+                        <div>
+                            <span class="text-sm font-bold text-white block">진로 데이터 시각적 가시화</span>
+                            <span class="text-xs text-slate-400">희망 학과 관련 정보를 다각도에서 분석하고 시각화함</span>
+                        </div>
+                    </label>
+
+                    <label class="flex items-start gap-3 p-4 rounded-xl bg-slate-900/80 border border-slate-800 cursor-pointer hover:border-indigo-500/50 transition-all select-none">
+                        <input type="checkbox" checked onchange="updateProgress()" class="chk-item mt-1 w-4 h-4 rounded text-indigo-600 bg-slate-800 border-slate-700 focus:ring-indigo-500">
+                        <div>
+                            <span class="text-sm font-bold text-white block">파일 단위 디지털 아카이빙</span>
+                            <span class="text-xs text-slate-400">수집된 유용한 자료들을 항목별, 파일별로 체계적으로 정리함</span>
+                        </div>
+                    </label>
+
+                    <label class="flex items-start gap-3 p-4 rounded-xl bg-slate-900/80 border border-slate-800 cursor-pointer hover:border-indigo-500/50 transition-all select-none">
+                        <input type="checkbox" checked onchange="updateProgress()" class="chk-item mt-1 w-4 h-4 rounded text-indigo-600 bg-slate-800 border-slate-700 focus:ring-indigo-500">
+                        <div>
+                            <span class="text-sm font-bold text-white block">나만의 맞춤 포트폴리오 구축</span>
+                            <span class="text-xs text-slate-400">'알잘딱깔센' 디자인과 완성도를 갖춘 나만의 포트폴리오 수립</span>
+                        </div>
+                    </label>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="mt-20 border-t border-slate-800/80 py-8 text-center text-xs text-slate-500 space-y-2">
+        <p class="font-medium text-slate-400">AI-2026 Course Final Reflection & Portfolio Project</p>
+        <p>© 2026 Digital Portfolio Record. All content refined for academic growth.</p>
+    </footer>
+
+    <script>
+        // Tab Switcher Logic
+        function switchTab(tabId) {
+            // Hide all contents
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.add('hidden');
+            });
+            // Show target content
+            const targetContent = document.getElementById('content-' + tabId);
+            if (targetContent) {
+                targetContent.classList.remove('hidden');
+            }
+
+            // Reset tab button styles
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.className = 'tab-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-slate-800 text-slate-300 hover:bg-slate-700 transition-all';
+            });
+
+            // Activate current tab button
+            const activeBtn = document.getElementById('tab-' + tabId);
+            if (activeBtn) {
+                activeBtn.className = 'tab-btn px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-indigo-600 text-white shadow-md shadow-indigo-600/30 transition-all';
+            }
+        }
+
+        // Checklist Progress Logic
+        function updateProgress() {
+            const checkboxes = document.querySelectorAll('.chk-item');
+            const total = checkboxes.length;
+            let checkedCount = 0;
+
+            checkboxes.forEach(chk => {
+                if (chk.checked) checkedCount++;
+            });
+
+            const percentage = Math.round((checkedCount / total) * 100);
+            
+            const percentText = document.getElementById('progress-percent');
+            const ringText = document.getElementById('progress-ring');
+
+            if (percentText) percentText.innerText = percentage + '%';
+            if (ringText) ringText.innerText = checkedCount + '/' + total;
+        }
+
+        // Initial setup on window load
+        window.onload = function() {
+            updateProgress();
+        };
+    </script>
+</body>
+</html>
